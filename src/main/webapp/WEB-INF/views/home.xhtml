@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+      template="/WEB-INF/views/home.xhtml">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <title><h:outputText value="Mall®" /></title>
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+            <style>
+                * {
+                    font-family: Verdana, Georgia, Lucida;
+                    font-size: 0.97em;
+                }
+            </style>
+        </h:head>
+        <h:body>
+            <p:growl autoUpdate="true" globalOnly="true"/>
+
+            <p:layout fullPage="true">
+                <p:layoutUnit position="north" size="100">
+                    <h:form>
+                        <p:toolbar>
+                            <p:toolbarGroup>
+                                <p:spacer width="10"/>
+                                <p:commandButton icon="ui-icon-home"/>
+                                <p:spacer width="10"/>
+                                <h:outputText value="Mall Business" style="font-size: x-large" />
+                            </p:toolbarGroup>
+                        </p:toolbar>
+                    </h:form>
+                </p:layoutUnit>
+                <p:layoutUnit position="west" size="250" >
+                    <h:form>
+                        <p:panelMenu widgetVar="panelMenu" >
+                            <p:submenu label="Comprador">
+                                <p:submenu label="Comprador 1">
+                                    <p:menuitem url="/spring/pages/comprador" ajax="false" title="Comprador" value="Comprador"/>
+                                    <p:submenu label="Comprador 2">
+                                        <p:menuitem url="/spring/pages/comprador" ajax="false" title="Comprador" value="Comprador"/>
+                                    </p:submenu>
+                                </p:submenu>
+                                <p:menuitem url="/spring/pages/comprador" ajax="false" title="Comprador" value="Comprador"/>
+                            </p:submenu>
+                            <p:submenu label="Central">
+                                <p:submenu label="Central1">
+                                    <p:menuitem url="/spring/pages/central" ajax="false" title="Central" value="Central"/>
+                                </p:submenu>
+                                <p:menuitem url="/spring/pages/central" ajax="false" title="Central" value="Central"/>
+                            </p:submenu>
+                            <p:submenu label="Guia">
+                                <p:menuitem url="/spring/pages/guia" ajax="false" title="Guia" value="Guia"/>
+                            </p:submenu>
+                            <p:submenu label="Pessoa">
+                                <p:menuitem url="/spring/pages/pessoa" ajax="false" value="Pessoa"/>
+                            </p:submenu>
+                        </p:panelMenu>
+                    </h:form>
+                </p:layoutUnit>
+                <p:layoutUnit position="center">
+                    <p:layout>
+                        <p:layoutUnit position="south" size="100" style="width: 600px; min-width: 600px; ">
+                            <h:form>
+                                <h:graphicImage  alt="Grands Sistemas" value="#{resource['images:logo.png']}" />
+                            </h:form>
+                        </p:layoutUnit>
+
+                        <p:layoutUnit position="center" style="width: 600px; min-width: 600px;">
+
+                            <p:growl globalOnly="true" id="growl" autoUpdate="true"/>
+                            <ui:insert name="body" />
+
+                        </p:layoutUnit>
+                    </p:layout>
+                </p:layoutUnit>
+            </p:layout>
+        </h:body>
+    </f:view>
+</html>
