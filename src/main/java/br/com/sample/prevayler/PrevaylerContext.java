@@ -18,7 +18,6 @@ public class PrevaylerContext {
             factory.configurePrevalentSystem(Empresa.newInstance());
             factory.configurePrevalenceDirectory("data");
 
-            factory.configureReplicationServer(PrevaylerFactory.DEFAULT_REPLICATION_PORT);
             try {
                 prevayler = factory.create();
             } catch (Exception e) {

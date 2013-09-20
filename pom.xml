@@ -12,7 +12,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <prevayler.version>2.5</prevayler.version>
+        <prevayler.version>2.6</prevayler.version>
         <spring.version>3.1.0.RELEASE</spring.version>
     </properties>
 
@@ -22,7 +22,7 @@
             <artifactId>guava</artifactId>
             <version>r09</version>
         </dependency>
-            
+
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>

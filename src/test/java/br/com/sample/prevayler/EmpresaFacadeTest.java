@@ -9,13 +9,13 @@ public class EmpresaFacadeTest {
     @Test
     public void testSomeMethod() {
 
-        Prevayler prevayler = PrevaylerContext.getInstance();
+        Prevayler<Empresa> prevayler = PrevaylerContext.getInstance();
         prevayler.execute(new CadastroFuncionario("José da Silva Jr"));
         prevayler.execute(new CadastroLoja("Loja da maria"));
 
-        Empresa empresa = (Empresa) prevayler.prevalentSystem();
+        Empresa empresa = prevayler.prevalentSystem();
 
-        Assert.assertEquals(4, empresa.getFuncionarios().size());
-        Assert.assertEquals(2, empresa.getLojas().size());
+        Assert.assertEquals(5, empresa.getFuncionarios().size());
+        Assert.assertEquals(3, empresa.getLojas().size());
     }
 }
