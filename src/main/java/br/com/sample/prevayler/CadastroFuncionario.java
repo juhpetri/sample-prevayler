@@ -3,7 +3,7 @@ package br.com.sample.prevayler;
 import java.util.Date;
 import org.prevayler.Transaction;
 
-public class CadastroFuncionario implements Transaction {
+public class CadastroFuncionario implements Transaction<Empresa> {
 
     private static final long serialVersionUID = 1L;
 
@@ -14,8 +14,8 @@ public class CadastroFuncionario implements Transaction {
     }
 
     @Override
-    public void executeOn(Object prevalentSystem, Date date) {
-        Empresa empresa = (Empresa) prevalentSystem;
+    public void executeOn(Empresa prevalentSystem, Date date) {
+        Empresa empresa = prevalentSystem;
         empresa.cadastraFuncionario(nome);
     }
 }
