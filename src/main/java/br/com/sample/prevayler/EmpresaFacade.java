@@ -14,8 +14,4 @@ public class EmpresaFacade implements Serializable {
         this.loja = loja;
         this.funcionario = funcionario;
     }
-
-    public void cadastrarLoja(Empresa empresa) {
-        empresa.cadastraLoja(loja);
-    }
 }

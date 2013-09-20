@@ -9,35 +9,20 @@ public class Loja implements Serializable {
 
     private String nome;
 
-    private String cnpj;
-
     protected Loja() {
     }
 
-    public static Loja newInstance() {
-        return new Loja();
+    protected Loja(String nome) {
+        this.nome = nome;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj.equals(this)) {
-            return true;
-        }
-        if (obj instanceof Loja) {
-            Loja other = (Loja) obj;
-            return Objects.equal(this.cnpj, other.cnpj);
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(this.cnpj);
+    public static Loja newInstance(String nome) {
+        return new Loja(nome);
     }
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("nome", nome).add("cnpj", cnpj).toString();
+        return Objects.toStringHelper(this).add("nome", nome).toString();
     }
 
     public String getNome() {
@@ -46,13 +31,5 @@ public class Loja implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
     }
 }
