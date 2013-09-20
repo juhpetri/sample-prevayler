@@ -27,11 +27,11 @@ public class Empresa implements Serializable {
         return funcionarios;
     }
 
-    public void addFuncionario(Funcionario funcionario) {
-        funcionarios.add(funcionario);
+    public void cadastraFuncionario(String nome) {
+        funcionarios.add(Funcionario.newInstance(nome));
     }
 
-    public void addLoja(Loja loja) {
+    public void cadastraLoja(Loja loja) {
         lojas.add(loja);
     }
 }

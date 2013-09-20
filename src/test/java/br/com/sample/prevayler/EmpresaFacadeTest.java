@@ -2,28 +2,19 @@ package br.com.sample.prevayler;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.prevayler.Prevayler;
 
 public class EmpresaFacadeTest {
 
-    Funcionario funcionario = Funcionario.newInstance();
-
-    Loja loja = Loja.newInstance();
-
     @Test
-    public void testSomeMethod() {
-        Empresa empresa = Empresa.newInstance();
+    public void testSomeMethod() throws Exception {
 
-        funcionario.setCpf("cpf");
-        funcionario.setNome("nome");
 
-        loja.setCnpj("cnpj");
-        loja.setNome("nome");
+        Prevayler prevayler = PrevaylerContext.getInstance();
+        prevayler.execute(new CadastroDeFuncionario("José da Silva Jr"));
 
-        EmpresaFacade empresaFacade = new EmpresaFacade(loja, funcionario);
-        empresaFacade.cadastrarFuncionario(empresa);
-        empresaFacade.cadastrarLoja(empresa);
+        Empresa empresa = (Empresa) prevayler.prevalentSystem();
 
         Assert.assertEquals(1, empresa.getFuncionarios().size());
-        Assert.assertEquals(1, empresa.getLojas().size());
     }
 }

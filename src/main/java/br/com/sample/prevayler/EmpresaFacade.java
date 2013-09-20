@@ -15,11 +15,7 @@ public class EmpresaFacade implements Serializable {
         this.funcionario = funcionario;
     }
 
-    public void cadastrarFuncionario(Empresa empresa) {
-        empresa.addFuncionario(funcionario);
-    }
-
     public void cadastrarLoja(Empresa empresa) {
-        empresa.addLoja(loja);
+        empresa.cadastraLoja(loja);
     }
 }

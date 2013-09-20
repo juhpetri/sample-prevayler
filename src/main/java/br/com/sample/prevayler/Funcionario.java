@@ -7,49 +7,26 @@ public class Funcionario implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String cpf;
-
     private String nome;
 
     protected Funcionario() {
     }
 
-    public static Funcionario newInstance() {
-        return new Funcionario();
+    protected Funcionario(String nome) {
+        this.nome = nome;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof Funcionario) {
-            Funcionario other = (Funcionario) obj;
-            return Objects.equal(this.cpf, other.cpf);
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(this.cpf);
+    public static Funcionario newInstance(String nome) {
+        return new Funcionario(nome);
     }
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("cpf", cpf).add("nome", nome).toString();
-    }
-
-    public String getCpf() {
-        return cpf;
+        return Objects.toStringHelper(this).add("nome", nome).toString();
     }
 
     public String getNome() {
         return nome;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public void setNome(String nome) {
